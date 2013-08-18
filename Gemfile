@@ -1,10 +1,61 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+gem 'bootstrap-sass'
+gem 'bcrypt-ruby'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+gem 'devise'
+gem 'cancan'
+gem 'simple_form'
+gem 'settingslogic'
+gem 'acts-as-taggable-on'
+gem 'carrierwave'
+gem 'mailboxer'
+gem 'acts_as_commentable'
+gem 'friendly_id'
+gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
+
+
+group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails'
+  # The following optional lines are part of the advanced setup.
+  gem 'guard-rspec'
+  gem 'spork-rails', github: 'sporkrb/spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
+end
+
+group :test do
+  gem 'selenium-webdriver'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem "rspec-rails"
+  gem 'cucumber-rails', :require => false
+  gem 'capybara-webkit'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'simplecov', require: false
+
+  # Uncomment this line on OS X.
+  # gem 'growl', '1.0.3'
+
+  # Uncomment these lines on Linux.
+  gem 'libnotify', '0.8.0'
+
+  # Uncomment these lines on Windows.
+  # gem 'rb-notifu', '0.0.4'
+  # gem 'win32console', '1.3.2'
+end
+
+
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -30,6 +81,11 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
 end
 
 # Use ActiveModel has_secure_password
